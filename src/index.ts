@@ -3,7 +3,7 @@ import { loadEnv } from './config/env.js'
 
 const env = loadEnv()
 const { app, close } = createApp(env)
-const http = app.listen(env.port, '0.0.0.0', () => {
+const http = app.listen(env.port, () => {
   console.log(JSON.stringify({ event: 'listening', port: env.port }))
 })
 let stopping = false
